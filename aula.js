@@ -56,4 +56,5 @@ function map (v, f) {
 }
 
 console.log(map(["abc", "def"], (e) => e.charAt(0)))
+console.log(map(["abc", "def"], (e) => e.length))
 
