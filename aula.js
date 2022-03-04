@@ -47,3 +47,13 @@ function filter (v,f) {
 
 console.log(filter([1, 2, 3, 4, 5, 6, 7], (n) => n % 2 == 0))
 
+function map (v, f) {
+    var newVector = []
+    v.forEach(element => {
+        newVector.push(f(element))
+    });
+    return newVector
+}
+
+console.log(map(["abc", "def"], (e) => e.charAt(0)))
+
