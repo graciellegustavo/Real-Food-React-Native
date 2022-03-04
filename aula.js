@@ -58,3 +58,14 @@ function map (v, f) {
 console.log(map(["abc", "def"], (e) => e.charAt(0)))
 console.log(map(["abc", "def"], (e) => e.length))
 
+let pessoa = {
+    nome: "John",
+    idade: 57,
+    endereco: {
+        logradouro: "Rua Frei João",
+        numero: 44,
+        bairro: "Vila Liviero"
+    }
+}
+
+console.log(pessoa.endereco.logradouro)
