@@ -35,3 +35,15 @@ function g() {
 
 f(g)
 
+function filter (v,f) {
+    var newVector = []
+    v.forEach(element => {
+        if (f(element)) {
+            newVector.push(element)
+        }
+    });
+    return newVector
+}
+
+console.log(filter([1, 2, 3, 4, 5, 6, 7], (n) => n % 2 == 0))
+
