@@ -69,3 +69,69 @@ let pessoa = {
 }
 
 console.log(pessoa.endereco.logradouro)
+
+const pi = Math.PI
+
+function calculoDemorado(numero) {
+    return new Promise((resolve, reject) => {
+        if (numero <= 0) {
+            reject('não consigo dividir por esse valor')
+        } else {
+            resolve(pi/numero)
+        }
+    })
+}
+
+const f2 = (n) => {
+    let p = new Promise((resolve) => {
+        let newN = (n * (n + 1))/2
+        resolve(newN)
+    })
+    return p
+}
+
+
+const calculoRapidinho = (n) => Promise.resolve((n * (n + 1))/2) 
+
+
+function devolvePIMultiplicado() {
+    return new Promise((jacare) => {
+        let piMultiplicado = pi * 80
+        jacare(piMultiplicado)
+    })
+}
+
+const resultado = devolvePIMultiplicado()
+resultado.then((res) => console.log(res))
+
+console.log('fui mais rapido ahha')
+
+calculoRapidinho(10).then((res)=> console.log(res))
+
+console.log(f2(10))
+
+//calback hell
+// const fs = require('fs')
+// const abrirArquivo = function (nomeArquivo) {
+//     //callback  = exibirConteudo
+//     const exibirConteudo = function (erro, conteudo) {
+//         if (erro) {
+//             console.log('Erro' + erro)
+//         } else {
+//             console.log('OK: ' + conteudo.toString())
+//             const dobro = +conteudo.toString() * 2 //o + converte para número
+//             console.log('valor calculado ' + dobro)
+//             //callback = finalizar
+//             const finalizar = function (error) {
+//                 if (error) {
+//                     console.log('erro = ' + erro)
+//                 }
+//             }
+//             fs.writeFile('dobro.txt', dobro.toString(), finalizar)
+//         }
+//     }
+//     //segundo parametro: função callback
+//     fs.readFile(nomeArquivo, exibirConteudo)
+// }
+
+// abrirArquivo('arquivo.txt')
